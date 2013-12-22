@@ -1,7 +1,10 @@
-export SERVER=harvest
-export PATH_ON_SERVER=/root/enliken-harvest
+export SERVER=adviser
+export PATH_ON_SERVER=/root/enliken-suggestions
 
-#rarely edit stuff
+if [ -z "$WORKERS_COUNT" ]; then
+  export WORKERS_COUNT=2
+fi
+
 if [ -z "$SERVER_ENV" ]; then
   export SERVER_ENV=digitalocean
 fi

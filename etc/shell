@@ -1,0 +1,2 @@
+source etc/conf
+ssh root@$SERVER -t "cd $PATH_ON_SERVER; bash --login"
