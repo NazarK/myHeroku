@@ -1,0 +1,3 @@
+source etc/conf
+echo "LOG: starting console"
+ssh root@$SERVER "bash --login -c 'cd $PATH_ON_SERVER;RAILS_ENV=$SERVER_ENV rails c'"

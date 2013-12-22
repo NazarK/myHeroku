@@ -1,6 +1,14 @@
-export SERVER=cloudspaint.com
-export PATH_ON_SERVER=/var/www/cloudspaint
+export SERVER=harvest
+export PATH_ON_SERVER=/root/enliken-harvest
 
 #rarely edit stuff
+if [ -z "$SERVER_ENV" ]; then
+  export SERVER_ENV=digitalocean
+fi
+
+if [ -z "$SERVER_PORT" ]; then
+  export SERVER_PORT=80
+fi
+
 export REPO=github
 export USERNAME_ON_SERVER=root

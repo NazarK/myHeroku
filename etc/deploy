@@ -1,5 +1,5 @@
 source etc/conf
 #push latest changes and deploy
 etc/push "$1"
-echo "updating app on server and restarting"
-ssh $USERNAME_ON_SERVER@$SERVER "bash --login -c 'cd $PATH_ON_SERVER;git pull $REPO master;etc/build;etc/restart'"
+echo "LOG: updating app on server and restarting"
+ssh $USERNAME_ON_SERVER@$SERVER "bash --login -c 'cd $PATH_ON_SERVER;etc/build;etc/restart;exit'"

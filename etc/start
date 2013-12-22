@@ -1,2 +1,9 @@
-echo "starting app"
-bundle exec thin start -e production -p 5000 --servers 1 -d
+source etc/conf
+echo "SERVER: starting app (env:$SERVER_ENV) ($SERVER_PORT)"
+bundle exec thin start -e $SERVER_ENV -p $SERVER_PORT --servers 1 -d
+echo "SERVER: starting $WORKERS_COUNT background workers"
+for i in `seq 2 $WORKERS_COUNT`
+do
+  echo "SERVER: worker $i"
+  RAILS_ENV=$SERVER_ENV script/delayed_job -i $i start >log/$SERVER_ENV.log &  
+done

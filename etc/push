@@ -1,3 +1,4 @@
+source etc/conf
 #uncomment this if you are working with colaborators
 #echo "getting latest changes"
 #git pull github master
@@ -18,5 +19,5 @@ else
   git commit -am "-"
 fi
 
-echo "pushing code to repo"
+echo "LOG: pushing code to repo"
 git push $REPO master

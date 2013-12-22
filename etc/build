@@ -1,8 +1,17 @@
 #this code will be executed on server to build app (before starting)
+source etc/conf
 
-echo "running migrations"
-RAILS_ENV=production rake db:migrate
+echo "SERVER: fetching fresh code"
+git reset --hard
+git clean -fd
+git pull $REPO master
 
-echo "compiling assets"
-time rake assets:precompile
+echo "SERVER: bundling"
+time bundle
+
+echo "SERVER: running migrations"
+time RAILS_ENV=$SERVER_ENV rake db:migrate
+
+#echo "SERVER: compiling assets"
+#time rake assets:precompile
 
