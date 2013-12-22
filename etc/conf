@@ -2,7 +2,9 @@ export SERVER=adviser
 export PATH_ON_SERVER=/root/enliken-suggestions
 
 if [ -z "$WORKERS_COUNT" ]; then
-  export WORKERS_COUNT=2
+  export WORKERS_COUNT=1
+else
+  echo "using predefined WORKERS_COUNT=$WORKERS_COUNT (.bash_profile?)"
 fi
 
 if [ -z "$SERVER_ENV" ]; then
