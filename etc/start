@@ -1,0 +1,2 @@
+echo "starting app"
+bundle exec thin start -e production -p 5000 --servers 1 -d

@@ -1,0 +1,22 @@
+#uncomment this if you are working with colaborators
+#echo "getting latest changes"
+#git pull github master
+
+#abort on any error
+set -e
+
+#echo "running specs"
+#rspec spec
+
+echo "commiting changes"
+git add .
+
+if [ "$1" != "" ]; then
+  git commit -am "$1"
+else
+  echo "using empty comment"
+  git commit -am "-"
+fi
+
+echo "pushing code to repo"
+git push $REPO master

@@ -1,0 +1,10 @@
+one line deploy scripts (inspired by Heroku)
+2013 NK
+
+edit etc/conf
+
+add whatever you need to be executed to etc/start
+
+you should have you ssh keys added to authorized_keys on server
+
+repository should be named github

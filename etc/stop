@@ -1,0 +1,9 @@
+#stopping server
+echo "stopping server"
+ps ax | grep 5000 | grep -v grep | awk '{print $1}' | xargs kill
+ps ax | grep 5001 | grep -v grep | awk '{print $1}' | xargs kill
+
+
+#echo "stopping all background thins and rakes"
+#ps ax | grep thin | grep -v grep | awk '{print $1}' | xargs kill
+#ps ax | grep rake | grep -v grep | awk '{print $1}' | xargs kill

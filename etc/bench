@@ -1,0 +1,1 @@
+time rails runner "puts 'rails load benchmark'"

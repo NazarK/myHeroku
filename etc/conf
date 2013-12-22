@@ -1,0 +1,6 @@
+export SERVER=cloudspaint.com
+export PATH_ON_SERVER=/var/www/cloudspaint
+
+#rarely edit stuff
+export REPO=github
+export USERNAME_ON_SERVER=root
