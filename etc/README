@@ -1,10 +1,13 @@
 one line deploy scripts (inspired by Heroku)
 2013 NK
 
-edit etc/conf
+you should have you ssh keys (id_rsa.pub) added to ~/.ssh/authorized_keys on server, 
+otherwise you will have to enter root password on every deploy
 
-add whatever you need to be executed to etc/start
+repository on local machine should be named github
 
-you should have you ssh keys added to authorized_keys on server
-
-repository should be named github
+etc/deploy "optional comment" - deploy script, deploys latest changes
+etc/conf - configuration variables
+etc/log - same as "heroku logs -t"
+etc/console - same as "heroku run console"
+etc/shell - start shell in app folder
