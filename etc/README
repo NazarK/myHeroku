@@ -1,13 +1,24 @@
-one line deploy scripts (inspired by Heroku)
+ONE LINE DEPLOY SCRIPTS 
+(inspired by Heroku)
+
+SETTING UP DEV ENVIRONMENT
+
+  git clone [REPOSITORY URL]
+  cd [CODE FOLDER]
+  git remote rename origin github
+  [MAKE CHANGES]
+  etc/deploy "optional comment"
+
+  * - to avoid entering root password on every deploy, add your ~/.ssh/id_rsa.pub 
+  to ~/.ssh/authorized_keys on server
+
+
+SCRIPTS
+
+  etc/deploy "optional comment" - deploy script, deploys latest changes
+  etc/conf - configuration variables
+  etc/log - same as "heroku logs -t"
+  etc/console - same as "heroku run console"
+  etc/shell - start shell in app folder
+
 2013 NK
-
-you should have you ssh keys (id_rsa.pub) added to ~/.ssh/authorized_keys on server, 
-otherwise you will have to enter root password on every deploy
-
-repository on local machine should be named github
-
-etc/deploy "optional comment" - deploy script, deploys latest changes
-etc/conf - configuration variables
-etc/log - same as "heroku logs -t"
-etc/console - same as "heroku run console"
-etc/shell - start shell in app folder
