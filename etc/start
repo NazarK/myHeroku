@@ -1,5 +1,6 @@
 source etc/conf
 echo "SERVER: starting app (env:$SERVER_ENV) ($SERVER_PORT)"
+rm tmp/pids/*
 bundle exec thin start -e $SERVER_ENV -p $SERVER_PORT --servers 1 -d
 echo "SERVER: starting $WORKERS_COUNT background workers"
 for i in `seq 1 $WORKERS_COUNT`
