@@ -3,10 +3,13 @@ echo "SERVER: starting app (env:$SERVER_ENV) ($SERVER_PORT)"
 rm tmp/pids/*
 bundle exec thin start -e $SERVER_ENV -p $SERVER_PORT --servers 1 -d
 echo "SERVER: starting $WORKERS_COUNT background workers"
-for i in `seq 1 $WORKERS_COUNT`
-do
-  echo "SERVER: worker $i"
-  RAILS_ENV=$SERVER_ENV script/delayed_job -i $i start >log/$SERVER_ENV.log &  
-done
+script/delayed_job -n $WORKERS_COUNT -m start&
+
+#for i in `seq 1 $WORKERS_COUNT`
+#do
+#  echo "SERVER: worker $i"
+#
+#  RAILS_ENV=$SERVER_ENV script/delayed_job -i $i start >log/$SERVER_ENV.log &  
+#done
 
 echo "HINT: use etc/log to watch logs"
