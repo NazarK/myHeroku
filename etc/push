@@ -20,4 +20,4 @@ else
 fi
 
 echo "LOG: pushing code to repo"
-git push $REPO master
+git push origin master

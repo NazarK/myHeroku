@@ -5,7 +5,6 @@ SETTING UP DEV ENVIRONMENT
 
   git clone [REPOSITORY URL]
   cd [CODE FOLDER]
-  git remote rename origin github
   [MAKE CHANGES]
   etc/deploy "optional comment"
 

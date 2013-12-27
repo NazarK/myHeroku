@@ -4,7 +4,7 @@ source etc/conf
 echo "SERVER: fetching fresh code"
 git reset --hard
 git clean -fd
-git pull $REPO master
+git pull origin master
 
 echo "SERVER: bundling"
 time bundle
