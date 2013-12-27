@@ -1,0 +1,6 @@
+#stopping app
+
+echo "SERVER: killing all thin, rake, delayed_job"
+ps ax | grep thin | grep -v grep | awk '{print $1}' | xargs kill
+ps ax | grep rake | grep -v grep | awk '{print $1}' | xargs kill
+ps ax | grep delayed_job | grep -v grep | awk '{print $1}' | xargs kill -9
