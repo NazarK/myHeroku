@@ -1,6 +1,6 @@
 source etc/conf
 if [ -z "$1" ]; then
-  ssh root@$SERVER -t "cd $PATH_ON_SERVER; bash --login"
+  ssh $USERNAME_ON_SERVER@$SERVER -t "cd $PATH_ON_SERVER; bash --login"
 else
-  ssh root@$SERVER -t "cd $PATH_ON_SERVER; bash --login -c '$1 $2 $3 $4 $5 $6 $7 $8 $9'"
+  ssh $USERNAME_ON_SERVER@$SERVER -t "cd $PATH_ON_SERVER; bash --login -c '$1 $2 $3 $4 $5 $6 $7 $8 $9'"
 fi

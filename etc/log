@@ -1,3 +1,3 @@
 source etc/conf
 echo "LOG: showing $SERVER_ENV log"
-ssh root@$SERVER "bash --login -c 'cd $PATH_ON_SERVER;tail -f ./log/$SERVER_ENV.log'"
+ssh $USERNAME_ON_SERVER@$SERVER "bash --login -c 'cd $PATH_ON_SERVER;tail -f ./log/$SERVER_ENV.log'"
