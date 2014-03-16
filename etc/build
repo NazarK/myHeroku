@@ -4,7 +4,7 @@ source etc/conf
 echo "SERVER: fetching fresh code"
 git reset --hard
 git clean -fd
-git pull origin master
+git pull origin $BRANCH
 
 echo "SERVER: bundling"
 time bundle
@@ -12,6 +12,6 @@ time bundle
 echo "SERVER: running migrations"
 time RAILS_ENV=$SERVER_ENV rake db:migrate
 
-#echo "SERVER: compiling assets"
-#time rake assets:precompile
+echo "SERVER: compiling assets"
+time rake assets:precompile
 

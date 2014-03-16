@@ -1,0 +1,5 @@
+source etc/conf
+#push latest changes and deploy
+etc/push "$1"
+echo "LOG: initial setup"
+ssh $USERNAME_ON_SERVER@$SERVER "bash --login -c 'mkdir $PATH_ON_SERVER;cd $PATH_ON_SERVER;git init .;git remote add origin $REPO;git pull origin $BRANCH;exit'"

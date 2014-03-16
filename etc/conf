@@ -1,17 +1,17 @@
-export SERVER=adviser
-export PATH_ON_SERVER=/root/enliken-suggestions
+export REPO=git@bitbucket.org:dexosoft/tradelog.git
+export USERNAME_ON_SERVER=root
+export SERVER=pennykeep.com
+export PATH_ON_SERVER=/var/www/rusnomera
+export BRANCH=master
 
 if [ -z "$WORKERS_COUNT" ]; then
-  export WORKERS_COUNT=1
+  export WORKERS_COUNT=0
 fi
 
 if [ -z "$SERVER_ENV" ]; then
-  export SERVER_ENV=digitalocean
+  export SERVER_ENV=production
 fi
 
 if [ -z "$SERVER_PORT" ]; then
-  export SERVER_PORT=80
+  export SERVER_PORT=5052
 fi
-
-export REPO=github
-export USERNAME_ON_SERVER=root
