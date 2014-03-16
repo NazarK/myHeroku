@@ -1,6 +1,6 @@
 export REPO=git@bitbucket.org:dexosoft/tradelog.git
 export USERNAME_ON_SERVER=root
-export SERVER=pennykeep.com
+export SERVER=rusnomera.pennykeep.com
 export PATH_ON_SERVER=/var/www/rusnomera
 export BRANCH=master
 
